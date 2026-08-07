@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sandra Castilho Sociedade Individual de Advocacia — atendimento jurídico especializado em Pelotas/RS.">
+  <title>Sandra Castilho Advocacia | Pelotas - RS</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #102a43;
+      --primary-dark: #071827;
+      --gold: #c9a227;
+      --gold-light: #e5ca6a;
+      --cream: #f8f6f0;
+      --text: #263238;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .navbar {
+      background: rgba(7, 24, 39, .96);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(201,162,39,.8);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: var(--gold-light);
+      margin-right: .6rem;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 85% 25%, rgba(201,162,39,.22), transparent 30%),
+        linear-gradient(135deg, #071827 0%, #102a43 55%, #183b59 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(201,162,39,.18);
+      border-radius: 50%;
+      right: -160px;
+      bottom: -180px;
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.03;
+    }
+
+    .hero .lead {
+      color: rgba(255,255,255,.8);
+      max-width: 680px;
+      font-size: 1.12rem;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #101010;
+      border: 1px solid var(--gold);
+      font-weight: 700;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      color: #101010;
+    }
+
+    .btn-outline-light:hover { color: #071827; }
+
+    .section-padding { padding: 90px 0; }
+
+    .section-title {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .section-subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #667781;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 3px;
+      background: var(--gold);
+      margin: 18px auto 25px;
+    }
+
+    .service-card {
+      border: 0;
+      border-radius: 18px;
+      height: 100%;
+      box-shadow: 0 12px 35px rgba(16,42,67,.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 20px 45px rgba(16,42,67,.14);
+    }
+
+    .icon-box {
+      width: 62px;
+      height: 62px;
+      border-radius: 16px;
+      background: rgba(201,162,39,.12);
+      color: #987717;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.65rem;
+    }
+
+    .about {
+      background: var(--cream);
+    }
+
+    .quote-box {
+      border-left: 4px solid var(--gold);
+      background: #fff;
+      padding: 28px;
+      border-radius: 0 14px 14px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,.05);
+    }
+
+    .stats {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .stat-number {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--gold-light);
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .process-card {
+      position: relative;
+      height: 100%;
+      padding: 28px;
+      border: 1px solid #e8ecef;
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .process-number {
+      font-size: .8rem;
+      font-weight: 800;
+      color: #987717;
+      letter-spacing: 1px;
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, #071827, #102a43);
+      color: #fff;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 18px;
+      padding: 28px;
+      height: 100%;
+    }
+
+    .contact-card a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .contact-card a:hover { color: var(--gold-light); }
+
+    footer {
+      background: #050f18;
+      color: rgba(255,255,255,.65);
+    }
+
+    .legal-box {
+      font-size: .85rem;
+      color: #7b858b;
+      background: #f6f7f8;
+      border-radius: 12px;
+      padding: 22px;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: #111;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0,0,0,.2);
+    }
+
+    @media (max-width: 991px) {
+      .hero { min-height: auto; padding: 130px 0 90px; }
+      .navbar-nav { padding-top: 12px; }
+    }
+  </style>
+</head>
+
+<body id="inicio">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#inicio">
+        <span class="brand-mark"><i class="bi bi-scale"></i></span>
+        Sandra Castilho Advocacia
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#menu" aria-controls="menu" aria-expanded="false"
+              aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#atuacao">Atuação</a></li>
+          <li class="nav-item"><a class="nav-link" href="#diferenciais">Diferenciais</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-gold btn-sm px-3" href="#contato">Fale conosco</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="row align-items-center">
+        <div class="col-lg-9">
+          <div class="eyebrow mb-3">Advocacia • Ética • Estratégia</div>
+          <h1 class="mb-4">Defesa de direitos com seriedade e dedicação.</h1>
+          <p class="lead mb-4">
+            Atendimento jurídico personalizado, com análise cuidadosa de cada caso,
+            orientação clara e atuação pautada pela ética profissional.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#contato" class="btn btn-gold btn-lg px-4">
+              <i class="bi bi-chat-dots me-2"></i>Solicitar atendimento
+            </a>
+            <a href="#atuacao" class="btn btn-outline-light btn-lg px-4">
+              Conheça nossa atuação
+            </a>
+          </div>
+
+          <div class="row mt-5 g-3">
+            <div class="col-sm-4">
+              <i class="bi bi-shield-check text-warning me-2"></i>
+              <span>Atuação responsável</span>
+            </div>
+            <div class="col-sm-4">
+              <i class="bi bi-person-check text-warning me-2"></i>
+              <span>Atendimento personalizado</span>
+            </div>
+            <div class="col-sm-4">
+              <i class="bi bi-briefcase text-warning me-2"></i>
+              <span>Experiência profissional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section-padding about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="eyebrow mb-2">Quem somos</div>
+          <h2 class="section-title display-6">Sandra Castilho Sociedade Individual de Advocacia</h2>
+          <div class="gold-line mx-0"></div>
+
+          <p>
+            Um escritório voltado à prestação de serviços jurídicos com atendimento
+            próximo, comunicação transparente e busca por soluções adequadas às
+            necessidades de cada cliente.
+          </p>
+          <p>
+            Nossa atuação combina conhecimento técnico, planejamento e responsabilidade
+            na condução das demandas, sempre respeitando a legislação e os princípios
+            éticos da advocacia.
+          </p>
+
+          <div class="quote-box mt-4">
+            <p class="mb-0 fst-italic">
+              “Cada caso merece ser compreendido em seus detalhes. A boa estratégia
+              começa com uma boa escuta.”
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="card service-card p-4">
+                <div class="icon-box mb-3"><i class="bi bi-search"></i></div>
+                <h5>Análise jurídica</h5>
+                <p class="small text-secondary mb-0">
+                  Estudo cuidadoso dos fatos, documentos e possibilidades jurídicas.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="card service-card p-4">
+                <div class="icon-box mb-3"><i class="bi bi-lightbulb"></i></div>
+                <h5>Estratégia</h5>
+                <p class="small text-secondary mb-0">
+                  Planejamento das medidas mais adequadas para cada situação.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="card service-card p-4">
+                <div class="icon-box mb-3"><i class="bi bi-people"></i></div>
+                <h5>Atendimento próximo</h5>
+                <p class="small text-secondary mb-0">
+                  Comunicação objetiva para que o cliente acompanhe cada etapa.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="card service-card p-4">
+                <div class="icon-box mb-3"><i class="bi bi-shield-lock"></i></div>
+                <h5>Confidencialidade</h5>
+                <p class="small text-secondary mb-0">
+                  Tratamento responsável das informações e documentos recebidos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATUAÇÃO -->
+  <section id="atuacao" class="section-padding">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="eyebrow">Serviços jurídicos</div>
+        <h2 class="section-title display-6">Como podemos ajudar</h2>
+        <div class="gold-line"></div>
+        <p class="section-subtitle">
+          A estrutura abaixo apresenta áreas de atuação de forma institucional.
+          Ajuste os serviços conforme as especialidades efetivamente oferecidas pelo escritório.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card p-4">
+            <div class="icon-box mb-4"><i class="bi bi-file-earmark-text"></i></div>
+            <h4>Consultoria Jurídica</h4>
+            <p class="text-secondary">
+              Orientação preventiva, análise de documentos, esclarecimento de dúvidas
+              e avaliação de riscos jurídicos.
+            </p>
+            <span class="small fw-semibold text-uppercase">Orientação & prevenção</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card p-4">
+            <div class="icon-box mb-4"><i class="bi bi-bank"></i></div>
+            <h4>Atuação Judicial</h4>
+            <p class="text-secondary">
+              Representação e acompanhamento de demandas judiciais, conforme a área
+              jurídica e a necessidade apresentada.
+            </p>
+            <span class="small fw-semibold text-uppercase">Representação</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card p-4">
+            <div class="icon-box mb-4"><i class="bi bi-pen"></i></div>
+            <h4>Contratos e Documentos</h4>
+            <p class="text-secondary">
+              Análise, elaboração e revisão de documentos jurídicos para maior clareza
+              e segurança nas relações.
+            </p>
+            <span class="small fw-semibold text-uppercase">Segurança documental</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card p-4">
+            <div class="icon-box mb-4"><i class="bi bi-person-vcard"></i></div>
+            <h4>Direito Civil</h4>
+            <p class="text-secondary">
+              Orientação em questões relacionadas às relações civis, obrigações,
+              contratos, responsabilidade e demais demandas compatíveis.
+            </p>
+            <span class="small fw-semibold text-uppercase">Direito privado</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card p-4">
+            <div class="icon-box mb-4"><i class="bi bi-house"></i></div>
+            <h4>Questões Patrimoniais</h4>
+            <p class="text-secondary">
+              Apoio jurídico na análise de situações que envolvam patrimônio,
+              documentos, obrigações e relações contratuais.
+            </p>
+            <span class="small fw-semibold text-uppercase">Patrimônio</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card p-4">
+            <div class="icon-box mb-4"><i class="bi bi-chat-square-text"></i></div>
+            <h4>Orientação Personalizada</h4>
+            <p class="text-secondary">
+              Atendimento individual para compreender o problema e definir os
+              próximos passos de maneira objetiva.
+            </p>
+            <span class="small fw-semibold text-uppercase">Atendimento individual</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats py-5">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-6 col-lg-3">
+          <div class="stat-number">2017</div>
+          <div class="small text-white-50">Ano de fundação</div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-number">RS</div>
+          <div class="small text-white-50">Atendimento em Pelotas</div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-number">100%</div>
+          <div class="small text-white-50">Atendimento personalizado</div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-number"><i class="bi bi-scale"></i></div>
+          <div class="small text-white-50">Compromisso jurídico</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" class="section-padding">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="eyebrow">Nosso compromisso</div>
+        <h2 class="section-title display-6">Uma experiência jurídica mais clara</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="process-card">
+            <div class="process-number">01 — ESCUTA</div>
+            <h5 class="mt-3">Entender o caso</h5>
+            <p class="small text-secondary mb-0">
+              Começamos pela compreensão dos fatos e dos objetivos do cliente.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="process-card">
+            <div class="process-number">02 — ANÁLISE</div>
+            <h5 class="mt-3">Avaliar possibilidades</h5>
+            <p class="small text-secondary mb-0">
+              Documentos e circunstâncias são avaliados para identificar caminhos jurídicos.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="process-card">
+            <div class="process-number">03 — ESTRATÉGIA</div>
+            <h5 class="mt-3">Definir os próximos passos</h5>
+            <p class="small text-secondary mb-0">
+              A orientação busca apresentar alternativas de forma clara e responsável.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="process-card">
+            <div class="process-number">04 — ACOMPANHAMENTO</div>
+            <h5 class="mt-3">Cuidar da demanda</h5>
+            <p class="small text-secondary mb-0">
+              Acompanhamento profissional conforme a natureza e evolução do caso.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 about">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <div class="eyebrow">Precisa de orientação?</div>
+          <h2 class="section-title mb-2">Converse conosco sobre sua situação.</h2>
+          <p class="mb-0 text-secondary">
+            Entre em contato para verificar a possibilidade de atendimento e conhecer
+            os próximos passos.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="#contato" class="btn btn-gold btn-lg px-4">
+            <i class="bi bi-arrow-right-circle me-2"></i>Entrar em contato
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="section-padding contact-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="eyebrow">Fale conosco</div>
+        <h2 class="text-white display-6 fw-bold">Estamos à disposição</h2>
+        <div class="gold-line"></div>
+        <p class="text-white-50 mx-auto" style="max-width: 650px;">
+          Utilize os canais abaixo para solicitar informações e verificar a possibilidade
+          de atendimento jurídico.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="contact-card">
+            <i class="bi bi-geo-alt fs-2 text-warning"></i>
+            <h5 class="mt-3">Endereço</h5>
+            <p class="text-white-50 mb-0">
+              Rua Princesa Isabel, 280<br>
+              Sala 605 — Centro<br>
+              Pelotas — RS<br>
+              CEP 96015-590
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="contact-card">
+            <i class="bi bi-telephone fs-2 text-warning"></i>
+            <h5 class="mt-3">Telefone</h5>
+            <p class="text-white-50 mb-0">
+              (53) 322****-****
+            </p>
+            <small class="text-white-50">
+              Substitua pelo telefone completo antes da publicação.
+            </small>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="contact-card">
+            <i class="bi bi-envelope fs-2 text-warning"></i>
+            <h5 class="mt-3">E-mail</h5>
+            <p class="text-white-50 mb-0">
+              fa****@****.com.br
+            </p>
+            <small class="text-white-50">
+              Substitua pelo e-mail completo antes da publicação.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="legal-box mt-5">
+        <strong>Informações cadastrais</strong><br>
+        Sandra Castilho Sociedade Individual de Advocacia<br>
+        CNPJ: 27.893.385/0001-10<br>
+        Natureza Jurídica: Sociedade Unipessoal de Advocacia<br>
+        Tipo: Matriz • Situação cadastral: Ativa
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-md-8">
+          <div class="fw-semibold text-white">Sandra Castilho Sociedade Individual de Advocacia</div>
+          <div class="small">CNPJ 27.893.385/0001-10 • Pelotas/RS</div>
+        </div>
+        <div class="col-md-4 text-md-end small">
+          © <span id="ano"></span> Todos os direitos reservados.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="back-top" href="#inicio" aria-label="Voltar ao topo">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("ano").textContent = new Date().getFullYear();
+
+    // Fecha o menu mobile ao clicar em um link
+    document.querySelectorAll(".navbar .nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        const menu = document.getElementById("menu");
+        if (menu.classList.contains("show")) {
+          bootstrap.Collapse.getOrCreateInstance(menu).hide();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
